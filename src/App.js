@@ -22,7 +22,7 @@ border: "solid 3px red",
    <>
   
       <NavBar></NavBar>
-   <ItemListContainer/>
+   <ItemListContainer greeting="Bienvenidos"></ItemListContainer>
 
       <hr></hr>
     

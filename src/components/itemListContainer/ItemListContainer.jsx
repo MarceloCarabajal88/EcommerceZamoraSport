@@ -2,7 +2,7 @@ import React from 'react'
 import FlexWrapper from '../flexWrapper/FlexWrapper';
 import Item from '../item/Item';
 
-function ItemListContainer() {
+function ItemListContainer(props) {
 
     const Productos=[{
         title:"Remera PSG",
@@ -33,6 +33,10 @@ function ItemListContainer() {
 
 
   return (
+    <>
+    <div className="d-flex justify-content-center mt-3 mb-4">
+        <h2>{props.greeting}</h2>
+        </div>
     <FlexWrapper>
 
 {Productos.map((data, idx) => (
@@ -46,6 +50,7 @@ function ItemListContainer() {
 
        
         </FlexWrapper>
+        </>
   )
 }
 

@@ -4,28 +4,29 @@ import Item from '../item/Item';
 
 function ItemListContainer(props) {
 
+    
     const Productos=[{
         title:"Remera PSG",
         price:1200,
-        detail:"Remera del equipo frances PARIS SAINT GERMAIN",
-        imgurl:"https://f.fcdn.app/imgs/2b55b2/www.lacancha.uy/lcanuy/345c/original/catalogo/DJ7865_411_1/2000-2000/camiseta-de-futbol-nike-psg-dri-fit-home-camiseta-de-futbol-nike-psg-dri-fit-home.jpg",
+        detail:"PARIS SAINT GERMAIN",
+        imgurl:"/assets/img/paris-nino.png",
         },
         
         {title:"Remera Real Madrid",
         price:900,
-        detail:"Remera del equipo Español Real Madrid",
+        detail:"Real Madrid",
         imgurl:"/assets/img/realmadrid.jpg",
         },
         
         {title:"Remera Barcelona",
         price:1000,
-        detail:"Remera del equipo español Barcelona",
-        imgurl:"https://store.fcbarcelona.com/medias/348x526-221100M-1.jpg?context=bWFzdGVyfGltYWdlc3wxMTI4NzN8aW1hZ2UvanBlZ3xoOTUvaGY2Lzg4OTQ0NDIxNzY1NDIvMzQ4eDUyNi8yMjExMDBNXzEuanBnfGVmNTQ5ZjEyNzJlMzZjYjYwMDRiNGMzM2RlNzNjMzNmNzMwYWIwZDQ3NTEwNDBiOTJjNjBjNTM0YTJiMDQ2NTA",
+        detail:"FC Barcelona",
+        imgurl:"/assets/img/barcelonanino.jpg",
         },
         
         {title:"Remera Liverpool",
         price:1300,
-        detail:"Remera del equipo Ingles Liverpool",
+        detail:"Liverpool FC",
         imgurl:"/assets/img/liverpool.jpg",
         },
         ];

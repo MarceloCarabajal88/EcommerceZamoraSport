@@ -22,7 +22,7 @@ border: "solid 3px red",
    <>
   
       <NavBar></NavBar>
-   <ItemListContainer greeting="Bienvenidos"></ItemListContainer>
+   <ItemListContainer greeting="Bienvenidos a Zamora Sports"></ItemListContainer>
 
       <hr></hr>
     

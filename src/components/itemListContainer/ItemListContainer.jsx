@@ -6,6 +6,9 @@ function ItemListContainer(props) {
 
     
     const Productos=[{
+        id:1,
+        categoria:"Remera",
+        stock:20,
         title:"Remera PSG",
         price:1200,
         detail:"PARIS SAINT GERMAIN",
@@ -13,21 +16,30 @@ function ItemListContainer(props) {
         imgurl2:"/assets/img/paris2.png",
         },
         
-        {title:"Remera Real Madrid",
+        {id:2,
+        categoria:"Remera",
+        stock:20,
+        title:"Remera Real Madrid",
         price:900,
         detail:"Real Madrid",
         imgurl:"/assets/img/realmadrid.jpg",
         imgurl2:"/assets/img/realmadrid2.jpg",
         },
         
-        {title:"Remera Barcelona",
+        {id:3,
+        categoria:"Remera",
+        stock:20,
+        title:"Remera Barcelona",
         price:1000,
         detail:"FC Barcelona",
         imgurl:"/assets/img/barcelonanino.jpg",
         imgurl2:"/assets/img/barcelona2.png",
         },
         
-        {title:"Remera Liverpool",
+        {id:4,
+        categoria:"Remera",
+        stock:10,
+        title:"Remera Liverpool",
         price:1300,
         detail:"Liverpool FC",
         imgurl:"/assets/img/liverpool.jpg",
@@ -35,7 +47,7 @@ function ItemListContainer(props) {
         },
         ];
 
-
+      
 
   return (
     <>
@@ -44,8 +56,11 @@ function ItemListContainer(props) {
         </div>
     <FlexWrapper>
 
-{Productos.map((data, idx) => (
+{Productos.map((data) => (
      <Item 
+     key={data.id}
+     categoria={data.categoria}
+     stock={data.stock}
      title={data.name}
      price={data.price}
      detail={data.detail}

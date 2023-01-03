@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 
 function NavBar() {
   return (
-    <div className="row">
+    <div className="row navcolor">
 
     <div className="d-flex justify-content-start navcontenedor col-lg-2 col-2">
        <div className="navcontenedorLogo">

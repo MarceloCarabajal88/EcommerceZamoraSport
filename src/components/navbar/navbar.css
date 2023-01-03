@@ -1,8 +1,12 @@
+.navcolor{
+  background-color: aquamarine;
+}
+
 .navcontenedor{
     width: 100%;
-    background-color: aquamarine;
   margin-bottom: 2rem;
   padding: 30px 0px;
+  margin-left: 20%;
 }
 
 .navcontenedor ul{
@@ -17,12 +21,13 @@ li{
 .navcontenedorLogo{
 margin-left: 10%;
   width:15%;
+  
     
 }
 
 .navcontenedorCarrito{
     width:15%;
-padding-left: 20%;
+padding-left: 90%;
 }
 .badge{
   content:attr(value);

@@ -1,0 +1,63 @@
+
+.homeGrid{
+    margin-top:20px ;
+    margin-left: 35px;
+    width: 95%;
+}
+
+  .containerGrid {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "foto1 foto1 foto2 foto2"
+      "foto1 foto1 foto3 foto4";
+  }
+  
+  .foto1 { grid-area: foto1;
+    position: relative;
+ }
+  
+  .foto2 { grid-area: foto2;
+    position: relative; }
+  
+  .foto3 { grid-area: foto3;
+    position: relative; }
+  
+  .foto4 { grid-area: foto4;
+    position: relative; }
+  
+
+  .containerGrid img{
+   
+
+    object-fit: cover;
+    object-position: top;
+   
+    height: 100%;
+    width: 100%;
+
+  }
+  
+.div_btngrid{
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.div_btngrid_btn{
+background: #000000;
+    color: #ffffff;
+    opacity: 1;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 25px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+.div_btngrid_btn:hover{
+    opacity: 0.8;
+    transition: opacity ease 0.25s;
+}

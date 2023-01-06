@@ -1,8 +1,10 @@
-import './App.css';
+
+
 
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import NavBar from './components/navbar/NavBar';
-
+import Footer from './components/footer/Footer';
+import HomeGrid from './components/homeGrid/HomeGrid';
 
 // componente APP
 
@@ -21,11 +23,13 @@ border: "solid 3px red",
   return (
    <>
   
-      <NavBar></NavBar>
+      <NavBar/>
    <ItemListContainer greeting="Bienvenidos a Zamora Sports"></ItemListContainer>
-
+   <HomeGrid/>
       <hr></hr>
-    
+      <Footer/>
+
+
     </>
     
   );

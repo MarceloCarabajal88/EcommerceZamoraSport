@@ -4,8 +4,9 @@ import Button, {ButtonChild} from '../button/Button';
 
 import React, { useEffect, useState } from "react";
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
-function Item({title,price,detail,imgurl,imgurl2}) {
+function Item({id,title,price,detail,imgurl,imgurl2}) {
 
  const [isHover, setIsHover]=useState(false);
 const handleMouseEnter=()=>{
@@ -33,13 +34,16 @@ let classImgProduct =(isHover)?imgurl2:imgurl;
         
        <img className='img-thumbnail' class="card-img-top" src={classImgProduct}   alt="Card image cap"></img>
       
-      
+     
 <div className="card-body">
         <h3 class="card-title">{title}</h3>
-        
+      
         <p>{detail}</p>
         <p>${price}</p>
-        <ButtonChild>ver detalles</ButtonChild>
+       
+        <Link to={`/detalle/${id}`}>moreinfo</Link>
+           <ButtonChild>ver detalles</ButtonChild>
+        
         </div>
 
     </div>

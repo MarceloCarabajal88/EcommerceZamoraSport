@@ -1,0 +1,11 @@
+button{
+    background-color: #96e6cb;
+    padding: 8px 16px;
+    margin-left: 15px;
+}
+
+span{
+    font-style:italic;
+    font-weight: bolder;
+    font-size: 20px;
+}

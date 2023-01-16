@@ -1,5 +1,6 @@
 import React from 'react'
 import './HomeGrid.css';
+import {Link } from 'react-router-dom';
 
 function HomeGrid() {
   return (
@@ -7,7 +8,9 @@ function HomeGrid() {
     <div className="containerGrid">
   <div className="foto1"><img src="/assets/img/camisetascat.jpg" alt="Foto Remeras"></img>
   <div className="div_btngrid">
+    <Link to="/category/Remera"> 
     <button className='div_btngrid_btn'>Ver Camisetas</button>
+    </Link>
   </div>
   </div>
 
@@ -25,7 +28,9 @@ function HomeGrid() {
 
   <div className="foto4"><img src="/assets/img/mochilacat.jpg" alt="Foto Remeras"></img>
   <div className="div_btngrid">
+  <Link className="nav-link" to="/category/Bolsos">
     <button className='div_btngrid_btn'>Ver Mochilas</button>
+    </Link>
   </div>
   </div>
 </div>

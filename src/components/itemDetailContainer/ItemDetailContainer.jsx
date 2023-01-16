@@ -1,5 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import Button, {ButtonChild} from '../button/Button';
+
 
 import getItems , {getISingletem} from "../../services/mockAsyncService";
 import ItemDetail from '../itemDetail/ItemDetail';
@@ -9,18 +11,23 @@ const producto=[];
 
 function ItemDetailContainer() {
  
+function handleAddToCart(producto){
+alert (`Agregaste el..${producto.title} al carrito`);
+};
+
+
 
  const[producto,setProduct]=useState({});
 
 
- console.log("estoy en item detail contaimer2");
- let { userId } = useParams();
+ 
+ let { itemid } = useParams();
  useEffect(()=>{
 
-  console.log("esto es el param "+parseInt(userId));
  
-  getISingletem(parseInt(userId)).then((respuesta)=>{
-    console.log("respuesta single item "+respuesta.title);
+ 
+  getISingletem(parseInt(itemid)).then((respuesta)=>{
+   
     setProduct(respuesta);
   });
  });
@@ -30,7 +37,11 @@ console.log("este es el producto  "+producto.title);
 
  
     return (
-  <ItemDetail producto={producto}/>
+      <div>
+  <ItemDetail producto={producto} handleAddToCart={handleAddToCart}/>
+</div>
+ 
+
   )
 }
 

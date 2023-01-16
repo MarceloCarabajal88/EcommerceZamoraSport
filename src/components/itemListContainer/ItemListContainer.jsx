@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import getItems from "../../services/mockAsyncService";
+import getItems, { getItembyCategory} from "../../services/mockAsyncService";
 import ItemList from "../itemList/ItemList";
 
 function ItemListContainer(props) {
@@ -10,15 +11,26 @@ function ItemListContainer(props) {
 
 const [Productos, setProducts]=useState([]);
 
+const {idcategory}=useParams();
+
 useEffect(()=>{
+
+if(idcategory){
+  getItembyCategory(idcategory).then((respuesta)=>{
+    console.log(respuesta);
+    setProducts(respuesta);
+});
+  
+
+
+}else{
     getItems().then((respuesta)=>{
         console.log(respuesta);
         setProducts(respuesta);
-    }
-    
-    
-    );
-});
+    });
+  }
+
+},[idcategory]);
 
   return (
     <>

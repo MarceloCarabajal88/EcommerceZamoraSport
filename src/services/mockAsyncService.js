@@ -19,10 +19,22 @@ export default function getItems (){
               
                 resolve(Productos.find((producto)=>producto.id===id));
                 console.log("estoy en mockAsyncservice + ");
-            },1000);
+            },50);
             
         });
       
     }
 
 
+    export function getItembyCategory (categoryid){
+        return new Promise((resolve)=>{
+            
+            setTimeout(()=>{
+              
+                resolve(Productos.filter((producto)=>producto.categoria===categoryid));
+                console.log("estoy en mockAsyncservice CATEGOTIA + ");
+            },50);
+            
+        });
+      
+    }

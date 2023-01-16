@@ -51,6 +51,26 @@ const Productos=[{
         imgurl2:"/assets/img/manchester2.png",
         },
 
+        {id:6,
+            categoria:"Short",
+            stock:18,
+            title:"Barcelona Short",
+            price:1300,
+            detail:"Short de Barcelona para niño",
+            imgurl:"/assets/img/shorts/barcelona1.png",
+            imgurl2:"/assets/img//shorts/barcelona2.png",
+            },
+
+            {id:7,
+                categoria:"Bolsos",
+                stock:18,
+                title:"Barcelona Bolso/Mochila",
+                price:1200,
+                detail:"Bolso o mochila de Barcelona, con compartimiento para notebook y utiles escolares ",
+                imgurl:"/assets/img/bolsos/bolsobarcelona1.png",
+                imgurl2:"/assets/img//bolsos/bolsobarcelona2.png",
+                },
+
     ];
 
 

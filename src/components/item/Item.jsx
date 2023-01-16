@@ -41,9 +41,9 @@ let classImgProduct =(isHover)?imgurl2:imgurl;
         <p>{detail}</p>
         <p>${price}</p>
        
-        <Link to={`/detalle/${id}`}>moreinfo</Link>
+        <Link to={`/detalle/${id}`}>
            <ButtonChild>ver detalles</ButtonChild>
-        
+           </Link>
         </div>
 
     </div>

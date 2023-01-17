@@ -19,7 +19,7 @@ export default function getItems (){
               
                 resolve(Productos.find((producto)=>producto.id===id));
                 console.log("estoy en mockAsyncservice + ");
-            },50);
+            },2000);
             
         });
       

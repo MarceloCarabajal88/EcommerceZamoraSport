@@ -12,7 +12,7 @@ function ItemList(props) {
      id={data.id}
      categoria={data.categoria}
      stock={data.stock}
-     title={data.name}
+     title={data.title}
      price={data.price}
      detail={data.detail}
      imgurl={data.imgurl}

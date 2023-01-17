@@ -5,7 +5,7 @@ import './ItemDetail.css';
 
 
 function ItemDetail({producto, handleAddToCart}) {
-
+console.log(producto.talle)
   const titulop=producto.title;
   return (
     <div className='row detailcontainer'>
@@ -19,8 +19,10 @@ function ItemDetail({producto, handleAddToCart}) {
 <p>{producto.detail}</p>
 <p>${producto.price}</p>
 <hr></hr>
+
 <div className='divtalles'>
 <p>Seleccione un talle</p>
+
 <ul>
   <li>6</li>
   <li>8</li>

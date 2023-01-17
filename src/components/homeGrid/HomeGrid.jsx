@@ -16,20 +16,24 @@ function HomeGrid() {
 
   <div className="foto2"><img src="/assets/img/pelotacat.jpg" alt="Foto pelota"></img>
   <div className="div_btngrid">
-    <button className='div_btngrid_btn'>Ver Balones</button>
+  <Link to="/category/Accesorios">
+    <button className='div_btngrid_btn'>Balones y Accesorios</button>
+    </Link>
   </div>
   </div>
 
   <div className="foto3"><img src="/assets/img/futbolaccesorios.jpg" alt="Foto Remeras"></img>
   <div className="div_btngrid">
-    <button className='div_btngrid_btn'>Ver Accesorios</button>
+  <Link to="/category/Short"> 
+    <button className='div_btngrid_btn'>Shorts</button>
+    </Link>
   </div>
   </div>
 
   <div className="foto4"><img src="/assets/img/mochilacat.jpg" alt="Foto Remeras"></img>
   <div className="div_btngrid">
   <Link className="nav-link" to="/category/Bolsos">
-    <button className='div_btngrid_btn'>Ver Mochilas</button>
+    <button className='div_btngrid_btn'>Mochilas</button>
     </Link>
   </div>
   </div>

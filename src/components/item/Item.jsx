@@ -36,9 +36,9 @@ let classImgProduct =(isHover)?imgurl2:imgurl;
       
      
 <div className="card-body">
-        <h3 class="card-title">{title}</h3>
+        <h5 ClassName="card-title tituloProduct">{title}</h5>
       
-        <p>{detail}</p>
+        
         <p>${price}</p>
        
         <Link to={`/detalle/${id}`}>

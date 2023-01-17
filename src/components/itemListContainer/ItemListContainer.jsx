@@ -19,6 +19,7 @@ if(idcategory){
   getItembyCategory(idcategory).then((respuesta)=>{
     console.log(respuesta);
     setProducts(respuesta);
+    window.scrollTo(0, 0);
 });
   
 
@@ -27,6 +28,7 @@ if(idcategory){
     getItems().then((respuesta)=>{
         console.log(respuesta);
         setProducts(respuesta);
+        
     });
   }
 

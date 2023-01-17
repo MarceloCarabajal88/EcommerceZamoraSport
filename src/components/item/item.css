@@ -1,10 +1,16 @@
 .contenedorTarjeta{
+  margin-top: 15px;
     width: 250px;
     transition: box-shadow .3s;
    height: fit-content;
 
 }
 
+
 .contenedorTarjeta:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
+
+  .tituloProduct{
+    font-size: 16px;
   }

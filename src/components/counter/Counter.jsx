@@ -22,9 +22,9 @@ function Counter() {
         <p>Cantidad</p>
     <div className='col-lg 6 col-md-6 col-sm-12 d-flex justify-content-around mt-3 mb-3'>
         <span>{count}</span>
-        <button onClick={handleAdd}>+</button>
+       
         <button onClick={handleSubstract}>-</button>
-    
+        <button onClick={handleAdd}>+</button>
     </div>
     </div>
   )

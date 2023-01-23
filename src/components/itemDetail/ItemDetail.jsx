@@ -1,12 +1,30 @@
 import React from 'react';
-import Counter from '../counter/Counter';
 import './ItemDetail.css';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+function ItemDetail({producto}) {
+
+ let talles="";
+ const [talle,setTalle]=useState();
 
 
 
-function ItemDetail({producto, handleAddToCart}) {
-console.log(producto.talle)
+
+
+ const handleClick=(value)=>{
+console.log("el value es "+value);
+  console.log("antes de setear el talle es "+talle)
+setTalle(value);
+talles=(value);
+console.log("Talles"+talles);
+console.log("este es el talle despues del set"+talle);
+console.log(value);
+  };
+
+
   const titulop=producto.title;
+
   return (
     <div className='row detailcontainer'>
       <div className='col-lg-6 col-md-6 col-xs-12 text-center'>
@@ -19,20 +37,31 @@ console.log(producto.talle)
 <p>{producto.detail}</p>
 <p>${producto.price}</p>
 <hr></hr>
-
+{
+  producto.talle &&
 <div className='divtalles'>
 <p>Seleccione un talle</p>
-
 <ul>
-  <li>6</li>
-  <li>8</li>
-  <li>10</li>
-  <li>12</li>
+{producto.talle.map((data)=>(
+  
+    <li key={data.num} style={{backgroundColor: talle === data.num ? "#96e6cb" : ""}} onClick={() => handleClick(data.num)}>{data.num}</li>
+))}
 </ul>
-<Counter/>
-<button className='btncomparar' onClick={()=>handleAddToCart(producto)}>COMPRAR</button>
+  
+
+ 
+
+
+
 </div>
+
+
+}
+
 </div>
+<Link to='/cartContainer'>
+<button>ir al carr</button>
+</Link>
 </div>
     </div>
   )

@@ -1,8 +1,14 @@
 import './navbar.css';
 import CartWidget from './cartWidget/CartWidget';
 import {Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { cartContext } from '../../storage/cartContext';
+
 
 function NavBar() {
+
+  const {getTotalItems}=useContext(cartContext);
+
   return (
     <div className="row navcolor">
 
@@ -50,7 +56,8 @@ function NavBar() {
 </nav>
 
 <div className="navcontenedorCarrito col-lg-2">
-   <CartWidget></CartWidget>
+   <CartWidget>{getTotalItems()}</CartWidget>
+   
    </div>
 </div>
 

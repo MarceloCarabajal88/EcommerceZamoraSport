@@ -1,8 +1,9 @@
 .detailcontainer{
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 .pricecontainer{
+    padding-top: 2rem;
     width:70%;
 }
 .divtalles ul{
@@ -19,6 +20,10 @@
     border-color: rgb(126, 133, 132);
     border-style: double;
     border-radius: 0.3px;
+}
+
+.liselected{
+    background-color: aqua;
 }
 
 .btncomparar{

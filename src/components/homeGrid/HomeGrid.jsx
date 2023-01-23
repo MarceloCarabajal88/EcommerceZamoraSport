@@ -1,8 +1,15 @@
 import React from 'react'
 import './HomeGrid.css';
 import {Link } from 'react-router-dom';
-
+import { StatesComponentsProvider } from '../../storage/statesComponents';
+import { componentsContext } from '../../storage/statesComponents';
+import { useContext } from 'react';
 function HomeGrid() {
+
+  let {GridComponent} =useContext(componentsContext);
+  console.log("el consol en gridhome "+GridComponent);
+if(GridComponent==true){
+
   return (
   <div className="homeGrid">
     <div className="containerGrid">
@@ -41,6 +48,11 @@ function HomeGrid() {
 
 </div>
   )
+}
+else
+return(
+  <div></div>
+)
 }
 
 export default HomeGrid

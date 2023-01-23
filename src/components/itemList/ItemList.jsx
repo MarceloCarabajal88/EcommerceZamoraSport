@@ -17,6 +17,7 @@ function ItemList(props) {
      detail={data.detail}
      imgurl={data.imgurl}
      imgurl2={data.imgurl2}
+     talle={data.talle}
       />
     
     

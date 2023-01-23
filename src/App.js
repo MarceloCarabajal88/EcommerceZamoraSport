@@ -8,38 +8,43 @@ import HomeGrid from './components/homeGrid/HomeGrid';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import EscudosBanner from './components/escudosBanner/EscudosBanner';
+import { createContext } from 'react'
+import { CartContextProvider } from './storage/cartContext';
+import CartContainer from './components/cartContainer/CartContainer';
+import { StatesComponentsProvider } from './storage/statesComponents';
+
+
 // componente APP
+
+
 
 //CAMEL CASE PARA EL- LOS ESTILOS CSS o GUIONES
 function App() {
 
 
-  /*
-let styleheader={
-backgroundColor:"black",
-marginTop: "40px",
-border: "solid 3px red",
-};
-*/
-
 
   return (
    <>
+   <CartContextProvider>
+    <StatesComponentsProvider>
   <BrowserRouter>
       <NavBar/>
       <Routes>
       <Route path='/category/:idcategory' element={<ItemListContainer/>}/>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/detalle/:itemid' element={<ItemDetailContainer/>}/>
+       
+        <Route path='/cartContainer' element={<CartContainer/>}/>
 
       </Routes>
-   
-   <HomeGrid/>
+
+    <HomeGrid/>
+  
       <hr></hr>
-      
       <Footer/>
       </BrowserRouter>
-
+      </StatesComponentsProvider>
+      </CartContextProvider>
     </>
     
   );

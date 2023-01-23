@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './Counter.css'
-function Counter() {
+function Counter({handleAddToCart}) {
 
     const[count,setCount]=useState(0);
 
@@ -26,6 +26,7 @@ function Counter() {
         <button onClick={handleSubstract}>-</button>
         <button onClick={handleAdd}>+</button>
     </div>
+    <button className='btncomparar' onClick={()=>handleAddToCart(count)}>COMPRAR</button>
     </div>
   )
 }

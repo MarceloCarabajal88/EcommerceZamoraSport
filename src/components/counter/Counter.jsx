@@ -3,17 +3,20 @@ import { useState } from 'react'
 import './Counter.css'
 function Counter({handleAddToCart}) {
 
-    const[count,setCount]=useState(0);
+    const[count,setCount]=useState(1);
 
 
 
 
     function handleAdd(){
+
         setCount(count+1);
     }
 
     function handleSubstract(){
+        if(count>1){
         setCount(count-1);
+    }
     }
 
 

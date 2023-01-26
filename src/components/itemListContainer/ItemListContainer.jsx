@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {getItems, getItembyCategory} from "../../services/firebase";
 
-import getItems, { getItembyCategory} from "../../services/mockAsyncService";
 import ItemList from "../itemList/ItemList";
 import { componentsContext } from '../../storage/statesComponents';
 import { useContext } from "react";
@@ -30,7 +30,11 @@ if(idcategory){
     setProducts(respuesta);
     DesactivarGrid();
     window.scrollTo(0, 0);
-});
+
+}).finally(() => {
+  setIsLoading(false);
+
+});;
   
 
 
@@ -42,9 +46,11 @@ if(idcategory){
       
     })
     .catch((err) => {
+      
       console.error(err);
     })
     .finally(() => {
+      
       setIsLoading(false);
       ActivarGrid();
     });

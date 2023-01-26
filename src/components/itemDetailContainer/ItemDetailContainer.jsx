@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Button, {ButtonChild} from '../button/Button';
 
 
-import getItems , {getISingletem} from "../../services/mockAsyncService";
+import  {getISingletem} from "../../services/firebase";
 import ItemDetail from '../itemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { cartContext } from '../../storage/cartContext';
@@ -33,12 +33,18 @@ DesactivarGrid();
 const {addItem} =useContext(cartContext);
 
 
- let { itemid } = useParams();
+ let {itemid} = useParams();
+
+
+function getTalle(talle){
+producto.tallecompra=talle;
+}
+
 
  function handleAddToCart(count){
 producto.cantidad=count;
-  addItem(producto);
-alert (`Agregaste el..${producto.title} al carrito cantidad del prod: ${count}`);
+  addItem(producto,count);
+//alert (`Agregaste el..${producto.title} al carrito cantidad del prod: ${count}`);
 
 };
 
@@ -49,28 +55,29 @@ alert (`Agregaste el..${producto.title} al carrito cantidad del prod: ${count}`)
 
  useEffect(()=>{
 
- 
- 
-  getISingletem(parseInt(itemid)).then((respuesta)=>{
+  getISingletem(itemid).then((respuesta)=>{
    
     setProduct(respuesta);
 
-
-
-  }).catch((error)=>alert(`ERROR:${error}`)).finally(()=>{
+  }).catch((error)=>alert(`ERROR no se xq:${error}`)).
+  finally(()=>{
 setIsLoading(false);
   });
- });
+ },[itemid]);
     
 
-console.log("este es el producto  "+producto.title);
+
+
+
+ 
+
 
 if(isLoading)
 return <Loader/>;
 
     return (
       <div>
-  <ItemDetail producto={producto} />
+  <ItemDetail  getTalle={getTalle} producto={producto} />
 <div className='row'>
   <div className='col-lg-6 col-md-5 col-xs-12 text-center ms-auto'>
 <div className='countcontainer'>

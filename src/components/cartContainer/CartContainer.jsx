@@ -7,7 +7,9 @@ function CartContainer() {
 
     const {cart} =useContext(cartContext);
     const {getTotalPrice} =useContext(cartContext);
-console.log("cartcointainer "+ JSON.stringify(cart));
+const{removeItem}=useContext(cartContext);
+
+console.log("este es cartcointainer "+ JSON.stringify(cart));
 
 const preciototal=getTotalPrice();
   return (
@@ -27,12 +29,12 @@ const preciototal=getTotalPrice();
 
 <div className='col-lg-3 col-md-4 col-sm-6'>
 <p>Detalle: {data.detail}</p>
-<p>Cantidad : {data.cantidad}</p>
+<p>talle:{data.tallecompra}  Cantidad : {data.cantidad}</p>
 </div>
 
 <div className='col-lg-3 col-md-4 col-sm-6'>
 <p>Precio : {data.price}</p>
-<button>QUitar</button>
+<button onClick={()=>removeItem(data.id)}>Eliminar</button>
 </div>
 </div>
             ))};

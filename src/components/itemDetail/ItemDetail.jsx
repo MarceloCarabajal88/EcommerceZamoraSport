@@ -3,7 +3,7 @@ import './ItemDetail.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-function ItemDetail({producto}) {
+function ItemDetail({getTalle,producto}) {
 
  let talles="";
  const [talle,setTalle]=useState();
@@ -13,13 +13,11 @@ function ItemDetail({producto}) {
 
 
  const handleClick=(value)=>{
-console.log("el value es "+value);
-  console.log("antes de setear el talle es "+talle)
+
 setTalle(value);
 talles=(value);
-console.log("Talles"+talles);
-console.log("este es el talle despues del set"+talle);
-console.log(value);
+console.log(talles);
+getTalle(value);
   };
 
 
@@ -38,13 +36,13 @@ console.log(value);
 <p>${producto.price}</p>
 <hr></hr>
 {
-  producto.talle &&
+  producto.talles &&
 <div className='divtalles'>
 <p>Seleccione un talle</p>
 <ul>
-{producto.talle.map((data)=>(
+{producto.talles.map((data)=>(
   
-    <li key={data.num} style={{backgroundColor: talle === data.num ? "#96e6cb" : ""}} onClick={() => handleClick(data.num)}>{data.num}</li>
+    <li key={data} style={{backgroundColor: talle === data ? "#96e6cb" : ""}} onClick={() => handleClick(data)}>{data}</li>
 ))}
 </ul>
   

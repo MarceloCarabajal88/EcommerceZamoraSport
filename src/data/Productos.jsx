@@ -1,4 +1,4 @@
-
+/*
 
 const Productos=[{
     id:1,
@@ -92,7 +92,7 @@ const Productos=[{
                         stock:18,
                         title:"Canilleras Raptor",
                         price:2200,
-                        detail:"Canilleras con tobillera, adidas raptor, calidad premium.",
+                        detail:"    ",
                         imgurl:"/assets/img/accesorios/canilleraad2.png",
                         imgurl2:"/assets/img//accesorios/canilleraad3.png",
                         },
@@ -133,3 +133,5 @@ const Productos=[{
 
 
 export default Productos
+
+*/

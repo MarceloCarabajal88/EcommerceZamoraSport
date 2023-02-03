@@ -1,3 +1,10 @@
 .countcontainer{
     width: 70%;
 }
+
+.ModalBt{
+    width:70%;
+}
+.ModalBt_texto {
+font-size: 20px;
+}

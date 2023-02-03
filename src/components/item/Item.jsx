@@ -35,11 +35,11 @@ let classImgProduct =(isHover)?imgurl2:imgurl;
        <img className='img-thumbnail' class="card-img-top" src={classImgProduct}   alt="Card image cap"></img>
       
      
-<div className="card-body">
-        <h5 ClassName="card-title tituloProduct">{title}</h5>
+<div className="card-body tituloProduct">
+        <h2>{title}</h2>
       
         
-        <p>${price}</p>
+        <p className="h4"><strong>$ UYU {price}</strong></p>
       
         <Link to={`/detalle/${id}`}>
            <ButtonChild>ver detalles</ButtonChild>

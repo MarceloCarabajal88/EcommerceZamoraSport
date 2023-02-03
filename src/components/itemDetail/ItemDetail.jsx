@@ -3,7 +3,11 @@ import './ItemDetail.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+
 function ItemDetail({getTalle,producto}) {
+
+
+
 
  let talles="";
  const [talle,setTalle]=useState();
@@ -61,6 +65,8 @@ getTalle(value);
 <button>ir al carr</button>
 </Link>
 </div>
+
+
     </div>
   )
 }

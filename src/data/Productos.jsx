@@ -104,7 +104,7 @@ const Productos=[{
                             price:2200,
                             detail:"Guantes Golero Adidas Junior. Flexibilidad y excelente adhesion, facilitando el agarre.",
                             imgurl:"/assets/img/accesorios/guantesad1.png",
-                            imgurl2:"/assets/img//accesorios/guantesad2.png",
+                            imgurl2:"/assets/img/accesorios/guantesad2.png",
                             },
 
                             {id:11,
@@ -114,7 +114,7 @@ const Productos=[{
                                 price:2200,
                                 detail:"Balon Oficial FIFA de copa del mundo Rusia 2018.",
                                 imgurl:"/assets/img/accesorios/pelota2018m.png",
-                                imgurl2:"/assets/img//accesorios/pelota2018m2.png",
+                                imgurl2:"/assets/img/accesorios/pelota2018m2.png",
                                 },
 
                                 {id:12,
@@ -124,7 +124,7 @@ const Productos=[{
                                     price:2200,
                                     detail:"Balon Oficial FIFA de copa del mundo Qatar 2022.",
                                     imgurl:"/assets/img/accesorios/pelotaqatar.png",
-                                    imgurl2:"/assets/img//accesorios/pelotaqatar2.png",
+                                    imgurl2:"/assets/img/accesorios/pelotaqatar2.png",
                                     
                                     },
 

@@ -1,8 +1,23 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;600&display=swap');
+
+h2{
+  display: block;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+    margin-bottom: 5px;
+}
 .contenedorTarjeta{
+
+  font-family: "Montserrat",sans-serif;
+  font-weight: 100;
   margin-top: 15px;
     width: 250px;
     transition: box-shadow .3s;
    height: fit-content;
+   margin-right: 15px;
 
 }
 
@@ -11,6 +26,20 @@
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
   }
 
-  .tituloProduct{
-    font-size: 16px;
+  .contenedorTarjeta h5{
+    font-size: 15px ;
+    font-weight: 600;
   }
+
+  .contenedorTarjeta p{
+    color: #000000;
+    font-size: small;
+ }
+
+ .tituloProduct h2{
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 5px;
+ }

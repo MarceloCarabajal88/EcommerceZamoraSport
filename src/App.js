@@ -12,7 +12,8 @@ import { createContext } from 'react'
 import { CartContextProvider } from './storage/cartContext';
 import CartContainer from './components/cartContainer/CartContainer';
 import { StatesComponentsProvider } from './storage/statesComponents';
-
+import CarouselHome from './components/carouselHome/CarouselHome';
+import OrderDetail from './components/ordenDetail/OrderDetail';
 
 // componente APP
 
@@ -29,18 +30,19 @@ function App() {
     <StatesComponentsProvider>
   <BrowserRouter>
       <NavBar/>
+      <CarouselHome/>
       <Routes>
       <Route path='/category/:idcategory' element={<ItemListContainer/>}/>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/detalle/:itemid' element={<ItemDetailContainer/>}/>
-       
+      
         <Route path='/cartContainer' element={<CartContainer/>}/>
-
+        <Route path='/thank-you/:itemid' element={<OrderDetail/>}/>
       </Routes>
-
+     
     <HomeGrid/>
   
-      <hr></hr>
+      
       <Footer/>
       </BrowserRouter>
       </StatesComponentsProvider>

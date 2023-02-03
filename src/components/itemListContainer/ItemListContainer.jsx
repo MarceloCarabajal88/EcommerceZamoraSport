@@ -10,7 +10,7 @@ import Loader from "../loader/Loader";
 
 function ItemListContainer(props) {
 
-  const {DesactivarGrid,ActivarGrid} =useContext(componentsContext);
+  const {DesactivarGrid,ActivarGrid,DesactivarCarousel,ActivarCarousel} =useContext(componentsContext);
 
 
  
@@ -29,6 +29,7 @@ if(idcategory){
     console.log(respuesta);
     setProducts(respuesta);
     DesactivarGrid();
+    DesactivarCarousel();
     window.scrollTo(0, 0);
 
 }).finally(() => {
@@ -52,7 +53,9 @@ if(idcategory){
     .finally(() => {
       
       setIsLoading(false);
+
       ActivarGrid();
+      ActivarCarousel();
     });
     
   }

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 //1. CONECTAR A FIRESTORE CON OTRO IMPORT
-import {getFirestore,doc,getDoc, collection, query, where,getDocs}from "firebase/firestore";
+import {getFirestore,doc,getDoc, collection, query, where,getDocs, addDoc}from "firebase/firestore";
 
 
 
@@ -56,5 +56,30 @@ const dataDocs=querySnapshot.docs.map((doc)=>({
     id: doc.id,
 }));
 
+
+
+
+
 return dataDocs;
+}
+
+
+export async function createBuyOrder(order){
+    console.log('esta es la orden '+JSON.stringify(order));
+    console.log("entre en createBuyOrder");
+
+    //const docRef = await addDoc(collection(db, "orders"),order); 
+      /*
+    const docRef = await addDoc(collection(db, "cities"), {
+        name: "Tokyo",
+        country: "Japan"
+      });
+      console.log("Document written with ID: ", docRef.id);
+
+
+*/
+    const orderCollection=collection(db,"orders");
+    const orderDoc=await addDoc(orderCollection,order);
+    console.log(orderDoc.id);
+return orderDoc.id;
 }

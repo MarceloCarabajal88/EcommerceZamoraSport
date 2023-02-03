@@ -3,7 +3,7 @@ import './footer.css';
 
 function Footer() {
   return (
-    <div className="row footerclass d-flex justify-content-around">
+    <div className="footerclass d-flex justify-content-around mt-4">
 
 <div className="col-lg-4 col-md-4 col-xs-12">
 <div className="columnsfooter">
@@ -20,7 +20,7 @@ function Footer() {
 
 <div className="col-lg-4 col-md-4 col-xs-12">
 <div className="menufooter">
-<h5 className="">Empresa</h5>
+<h5 className="">EMPRESA</h5>
 <ul>
 <li>Quienes somos</li>
 <li>Locales</li>
@@ -32,7 +32,7 @@ function Footer() {
 
 <div className="col-lg-4 col-md-4 col-xs-12">
 <div className="menufooter">
-<h5>Compra</h5>
+<h5>COMPRA</h5>
 <ul>
 <li>Quienes somos</li>
 <li>Locales</li>

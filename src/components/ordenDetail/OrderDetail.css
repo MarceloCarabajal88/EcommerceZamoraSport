@@ -1,0 +1,14 @@
+.orderconfirmed{
+    position: relative;
+margin-top: 30px;
+background-image: url("../../../public/assets/img/orderconfirmed.jpg");
+height: 500px;
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: contain; /* Resize the background image to cover the entire container */
+}
+
+.divbtn{
+    position: absolute;
+   bottom: 30px;
+}

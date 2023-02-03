@@ -19,7 +19,9 @@ export function StatesComponentsProvider(props){
 //VARIABLE PARA COMPONENTE DEL GRID ACTIVAR O DESACTIVAR
    
 let [GridComponent,setGridComponent]=useState(true);  
+let [CarouselComponent,setCarouselComponent]=useState(true);
 
+//COMPONENTE GRID HOME
 function DesactivarGrid(){
     setGridComponent(false);
 }
@@ -29,10 +31,22 @@ function ActivarGrid(){
 }
 
 
+//COMPONENTE SLIDER CAROUSEL
+function DesactivarCarousel(){
+    setCarouselComponent(false);
+}
+
+function ActivarCarousel(){
+    setCarouselComponent(true);
+}
+
+
+
+
  
 
  console.log("estado del componente GRID -",GridComponent);
- const value={GridComponent,DesactivarGrid,ActivarGrid};
+ const value={GridComponent,CarouselComponent,DesactivarGrid,ActivarGrid,DesactivarCarousel,ActivarCarousel};
  
     return (
     <componentsContext.Provider value={value}>{props.children}</componentsContext.Provider>

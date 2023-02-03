@@ -11,7 +11,8 @@ import Counter from '../counter/Counter';
 import './ItemDetailContainer.css';
 import Loader from '../loader/Loader';
 import { componentsContext } from '../../storage/statesComponents';
-
+import Modal from 'react-bootstrap/Modal';
+import Button2 from 'react-bootstrap/Button';
 
 const producto=[];
 
@@ -19,7 +20,11 @@ const producto=[];
 
 function ItemDetailContainer() {
 
-  
+  //VARIABLES PARA EL MODAL BOOSTRAP
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
   const {DesactivarGrid,ActivarGrid} =useContext(componentsContext);//DESACTIVAR GRIDHOME
 
@@ -44,6 +49,7 @@ producto.tallecompra=talle;
  function handleAddToCart(count){
 producto.cantidad=count;
   addItem(producto,count);
+  handleShow();
 //alert (`Agregaste el..${producto.title} al carrito cantidad del prod: ${count}`);
 
 };
@@ -85,6 +91,50 @@ return <Loader/>;
   </div>
   </div>
   </div>
+
+  <div className='ModalBt'>
+
+  <Modal 
+       size="lg"
+      show={show} 
+      onHide={handleClose}
+      aria-labelledby="example-custom-modal-styling-title"
+      dialogClassName="modal-90w"
+      >
+        
+        <Modal.Header closeButton>
+        <div className='d-flex justify-content-center text-center w-100'>
+          
+          <img  width="140px" src="/assets/img/logozamora.png" alt="logo zamora"></img>
+          </div>
+          
+          <Modal.Title> 
+       
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div className='row'>
+          <div className='col-lg-2'>
+          <img  width="30px" src="/assets/img/accept.png" alt="icono ok"></img>
+          </div>
+          <div className='col-lg-10'>
+          <p className='ModalBt_texto'>  Artículo añadido correctamente a tu compra</p>
+          </div>
+          </div>
+         
+</Modal.Body>
+        <Modal.Footer>
+          <Button2 variant="secondary" onClick={handleClose}>
+            CONTINUAR EN EL SITIO
+          </Button2>
+          <Button2 variant="primary" onClick={handleClose}>
+            FINALIZAR COMPRA
+          </Button2>
+        </Modal.Footer>
+      </Modal>
+      </div>
+
+
 </div>
  
 

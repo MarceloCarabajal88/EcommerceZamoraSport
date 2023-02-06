@@ -6,7 +6,7 @@ function Counter({handleAddToCart}) {
     const[count,setCount]=useState(1);
 
 
-
+// ARREGLAR COUNT PARA QUE CUENTE BIEN
 
     function handleAdd(){
 
@@ -21,13 +21,25 @@ function Counter({handleAddToCart}) {
 
 
   return (
-    <div>
-        <p>Cantidad</p>
-    <div className='col-lg 6 col-md-6 col-sm-12 d-flex justify-content-around mt-3 mb-3'>
-        <span>{count}</span>
+    <div className='text-center'>
        
-        <button onClick={handleSubstract}>-</button>
-        <button onClick={handleAdd}>+</button>
+<div className='col-lg 6 col-md-6 col-sm-12 d-flex justify-content-center mt-3'> <p>Cantidad</p></div>
+
+    <div className='col-lg 6 col-md-6 col-sm-12 d-flex justify-content-center mb-3 divbotones'>
+   
+             <div>       
+                 <button onClick={handleSubstract}>-</button>
+            </div>
+
+            <div>
+          
+                 <input type="text" value={count}></input>
+            </div>
+
+            <div>
+                 <button onClick={handleAdd}>+</button>
+             </div>
+
     </div>
     <button className='btncomparar' onClick={()=>handleAddToCart(count)}>COMPRAR</button>
     </div>

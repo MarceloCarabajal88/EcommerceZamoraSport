@@ -1,12 +1,9 @@
 import React from 'react'
 import { cartContext } from '../../storage/cartContext';
 import { useContext } from "react";
-import  {createBuyOrder} from "../../services/firebase";
-import { useState } from 'react';
 import { componentsContext } from '../../storage/statesComponents';
-
+import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import CartForm from './CartForm';
 
 function CartContainer() {
 
@@ -26,7 +23,7 @@ const preciototal=getTotalPrice();
 
 
 
-   
+   /*
 async function  handlecheckout(userData){
 
   //1. modelo orden compra
@@ -49,13 +46,16 @@ total:"1200"
 };
   //2 enviar a firebase
   let id = await createBuyOrder(order);
+  let stock = await updateStock(itemscart);
+
+  //hacer console log par ver que trae de stock id
 console.log("esta es la ide del prod "+id);
   navigate(`/thank-you/${id}`);
  
   // recibir respuesta id para confirmar al usuario
 }
 
-
+*/
 
     
   return (
@@ -70,7 +70,7 @@ console.log("esta es la ide del prod "+id);
            
             <h3>Mi Compra</h3>
 
-            {cart.map((data) => (
+            {cart.map((data,index) => (
             <div className='row mt-3'>
          
 <div className='col-lg-4 col-md-4 col-sm-6'>
@@ -78,18 +78,21 @@ console.log("esta es la ide del prod "+id);
 </div>
 
 <div className='col-lg-3 col-md-4 col-sm-6'>
-<p>Detalle: {data.detail}</p>
-<p>talle:{data.tallecompra}  Cantidad : {data.cantidad}</p>
+<p>Articulo: {data.title}</p>
+{ data.tallecompra &&
+<p>talle: {data.tallecompra} </p>
+}
+<p> Cantidad : {data.cantidad}</p>
 </div>
 
 <div className='col-lg-3 col-md-4 col-sm-6'>
-<p>Precio : {data.price}</p>
-<button onClick={()=>removeItem(data.id)}>Eliminar</button>
+<p>Precio : $UYU {data.price*data.cantidad}</p>
+
+<button onClick={()=>removeItem(index)}>Eliminar</button>
 </div>
 </div>
             ))};
 <p>Importe Total  : {preciototal}</p>
-<button onClick={handlecheckout}>Finalizar compra</button>
 
         </div>
         </div>
@@ -102,7 +105,7 @@ console.log("esta es la ide del prod "+id);
 <div className='col-lg-12'>
 <div className='d-flex justify-content-center mt-4'>
 
-<CartForm onSubmit={handlecheckout}/>
+
 </div>
 </div>
 </div>

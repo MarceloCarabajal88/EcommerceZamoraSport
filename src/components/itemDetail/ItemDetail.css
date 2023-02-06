@@ -7,19 +7,28 @@
     width:70%;
 }
 .divtalles ul{
-    display: flex;
+    display: table;
+    border-spacing: 10px;
     flex-direction: row;
     list-style: none;
     justify-content: flex-start;
 }
 
 .divtalles ul li{
+    display: table-cell; 
     text-align: center;
+    vertical-align: middle;
     width: 40px;
     height: 40px;
-    border-color: rgb(126, 133, 132);
-    border-style: double;
+    border: 1px solid #ededed;
+    transition: border 0.3s;
+    border-style: solid;
     border-radius: 0.3px;
+  
+}
+
+.divtalles ul li:hover{
+border: solid 1px #000000;
 }
 
 .liselected{
@@ -42,4 +51,25 @@
 .btncomparar:hover{
     background: rgba(0,0,0,0.8);
     padding: 0 40px;
+}
+
+.btn_goToCart{
+
+    box-shadow: 0px 10px 14px -7px #548579;
+	background:linear-gradient(to bottom, #8fc3bb 5%, #24cfcc 100%);
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+
+.btn_goToCart:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
 }

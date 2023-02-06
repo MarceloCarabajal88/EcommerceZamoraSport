@@ -13,6 +13,7 @@ import Loader from '../loader/Loader';
 import { componentsContext } from '../../storage/statesComponents';
 import Modal from 'react-bootstrap/Modal';
 import Button2 from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const producto=[];
 
@@ -124,12 +125,16 @@ return <Loader/>;
          
 </Modal.Body>
         <Modal.Footer>
+        <Link to='/checkout'>
           <Button2 variant="secondary" onClick={handleClose}>
             CONTINUAR EN EL SITIO
           </Button2>
+          </Link>
+          <Link to='/checkout'>
           <Button2 variant="primary" onClick={handleClose}>
             FINALIZAR COMPRA
           </Button2>
+          </Link>
         </Modal.Footer>
       </Modal>
       </div>

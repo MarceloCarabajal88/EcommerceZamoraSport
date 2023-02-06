@@ -2,11 +2,15 @@ import React from 'react';
 import './ItemDetail.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
+import { cartContext } from '../../storage/cartContext';
+import { useContext } from 'react';
 
 function ItemDetail({getTalle,producto}) {
 
+  const {getTotalItems}=useContext(cartContext);
 
+  const totalitems= getTotalItems();
+console.log('este es el total de items'+totalitems)
 
 
  let talles="";
@@ -39,14 +43,14 @@ getTalle(value);
 <p>{producto.detail}</p>
 <p>${producto.price}</p>
 <hr></hr>
-{
+{  
   producto.talles &&
 <div className='divtalles'>
 <p>Seleccione un talle</p>
 <ul>
 {producto.talles.map((data)=>(
   
-    <li key={data} style={{backgroundColor: talle === data ? "#96e6cb" : ""}} onClick={() => handleClick(data)}>{data}</li>
+    <li key={data} style={{backgroundColor: talle === data ? "#000000" : "", color: talle === data ? "#f8f9fa" : "#212529"}} onClick={() => handleClick(data)}>{data}</li>
 ))}
 </ul>
   
@@ -61,9 +65,11 @@ getTalle(value);
 }
 
 </div>
+{ totalitems>0 &&
 <Link to='/cartContainer'>
-<button>ir al carr</button>
+<button className='btn_goToCart'>ir al carrito</button>
 </Link>
+}
 </div>
 
 

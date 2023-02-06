@@ -10,23 +10,37 @@ export function CartContextProvider(props){
         //let newCart= cart.map(item=>item);
         //newCart.push(item);
         const isInCar=cart.some(iteminCart=>iteminCart.id===item.id);
-       
+        const isInCarTalle=cart.some(iteminCart2=>iteminCart2.id===item.id && iteminCart2.tallecompra===item.tallecompra);
+        //const isInCarTalleDistinto=cart.some(iteminCart3=>iteminCart3.id===item.id && iteminCart3.tallecompra!==item.tallecompra);
+
         if(isInCar===true){
             cart.forEach((compra)=>{
                 //SI NO TIENEN TALLE
-                if(item.tallecompra){
-              if(compra.id===item.id &&  compra.tallecompra===item.tallecompra){
-                console.log("es repetido el prod y taalle se agrega la cantidad "+count);
+           if(isInCarTalle){
+            console.log("el vartalle es  "+isInCarTalle)
+
+            if(compra.id===item.id && compra.tallecompra===item.tallecompra){
              
-                 compra.cantidad=compra.cantidad+count-1;
+                 compra.cantidad=compra.cantidad+count;
               
                }
-            }
 
-            if(compra.id===item.id ){
-                console.log("es repetido solo el id se agrega la cantidad "+count);
+           }
+
+           if(!isInCarTalle){
+            setCart([...cart,item]);
+
+           }
+
+
+         
+
+       
+
+            if(compra.id===item.id && item.tallecompra===''){
+      
                 compra.cantidad=compra.cantidad+count-1;
-
+            
 
             }
 
@@ -36,16 +50,18 @@ export function CartContextProvider(props){
         }
         else{
         setCart([...cart,item]);
-        alert("entre en la func addITEM");
+
+       
     }
     }
 
-     function removeItem(idItem){
+     function removeItem(posicion){
 
 console.log("entre al removeitem");
-        const carritonuevo = cart.filter((item) => item.id !== idItem);
+      
+          const carritonuevo =  cart.filter((_, index) => index !== posicion)
        setCart(carritonuevo);
-       console.log(carritonuevo)
+       console.log('EL CARRITO NUEVO '+carritonuevo)
 
 
     };
@@ -57,7 +73,7 @@ console.log("entre al removeitem");
  function getTotalItems(){
 /* */
 let total=0;
-cart.forEach((item)=>(total+=1));
+cart.forEach((item)=>(total+=item.cantidad));
 return total;
  };
 

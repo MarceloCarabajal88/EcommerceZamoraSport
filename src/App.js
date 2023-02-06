@@ -14,7 +14,7 @@ import CartContainer from './components/cartContainer/CartContainer';
 import { StatesComponentsProvider } from './storage/statesComponents';
 import CarouselHome from './components/carouselHome/CarouselHome';
 import OrderDetail from './components/ordenDetail/OrderDetail';
-
+import Chekout from './components/checkout/Chekout';
 // componente APP
 
 
@@ -37,6 +37,7 @@ function App() {
         <Route path='/detalle/:itemid' element={<ItemDetailContainer/>}/>
       
         <Route path='/cartContainer' element={<CartContainer/>}/>
+        <Route path='/checkout' element={<Chekout/>}/>
         <Route path='/thank-you/:itemid' element={<OrderDetail/>}/>
       </Routes>
      

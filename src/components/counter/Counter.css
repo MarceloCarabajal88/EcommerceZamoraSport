@@ -1,11 +1,18 @@
-button{
+.divbotones button{
     background-color: #96e6cb;
     padding: 8px 16px;
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
-span{
-    font-style:italic;
-    font-weight: bolder;
-    font-size: 20px;
+input{
+    font-size: 14px;
+    padding: 0;
+    vertical-align: middle;
+    border-radius: 0;
+    text-align: center;
+  
+  
+    border: 1px solid #ededed;
+    width: 80px;
+    height: 45px;
 }

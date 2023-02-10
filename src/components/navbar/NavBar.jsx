@@ -1,13 +1,13 @@
 import './navbar.css';
 import CartWidget from './cartWidget/CartWidget';
 import {Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { cartContext } from '../../storage/cartContext';
-
+import { useEffect } from 'react';
 import { Nav, Navbar} from 'react-bootstrap';
 
 import Container from 'react-bootstrap/Container';
-import { useState } from 'react';
+
 
 
 
@@ -17,7 +17,12 @@ import { useState } from 'react';
 function NavBar() {
 
   const {getTotalItems}=useContext(cartContext);
-
+  const[contad,setContad]=useState();
+  
+  useEffect(()=>{
+setContad(getTotalItems());
+   
+   },[getTotalItems]);
 
 
 
@@ -56,7 +61,7 @@ function NavBar() {
     
 
 <div className="navcontenedorCarrito col-lg-2">
-   <CartWidget>{getTotalItems()}</CartWidget>
+   <CartWidget>{contad}</CartWidget>
    
    </div>
 </div>

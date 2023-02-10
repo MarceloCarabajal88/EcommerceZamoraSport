@@ -4,12 +4,22 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { cartContext } from '../../storage/cartContext';
 import { useContext } from 'react';
+import { useEffect } from 'react';
 
 function ItemDetail({getTalle,producto}) {
 
   const {getTotalItems}=useContext(cartContext);
+  const[totalitems,SetTotalItems]=useState();
 
-  const totalitems= getTotalItems();
+  useEffect(()=>{
+    SetTotalItems(getTotalItems());
+       
+       },[getTotalItems]);
+
+
+
+
+  
 console.log('este es el total de items'+totalitems)
 
 
@@ -56,7 +66,6 @@ getTalle(value);
   
 
  
-
 
 
 </div>

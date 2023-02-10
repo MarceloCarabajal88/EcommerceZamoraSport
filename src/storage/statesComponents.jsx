@@ -45,7 +45,7 @@ function ActivarCarousel(){
 
  
 
- console.log("estado del componente GRID -",GridComponent);
+ //console.log("estado del componente GRID -",GridComponent);
  const value={GridComponent,CarouselComponent,DesactivarGrid,ActivarGrid,DesactivarCarousel,ActivarCarousel};
  
     return (

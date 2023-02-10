@@ -6,8 +6,12 @@ import  {createBuyOrder,updateStock} from "../../services/firebase";
 import { cartContext } from '../../storage/cartContext';
 import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
+import Cart from '../cartContainer/Cart';
 
 function Chekout() {
+
+  const {clearCart}=useContext(cartContext);
+
     const navigate = useNavigate();
 
     const {cart} =useContext(cartContext);
@@ -38,6 +42,11 @@ function Chekout() {
       
         //hacer console log par ver que trae de stock id
       console.log("esta es la ide del prod "+id);
+
+      //vacio el carrito de compras
+        clearCart();
+
+
         navigate(`/thank-you/${id}`);
        
         // recibir respuesta id para confirmar al usuario
@@ -47,12 +56,12 @@ function Chekout() {
   return (
     <div className='container'>
         <div className='row'>
-<div className='col-lg-6 col-sm-12'>
+<div className='col-lg-6 col-sm-12 mt-4'>
  
     <CartForm onSubmit={handlecheckout}/>
 </div>
 <div className='col-lg-6 col-sm-12'>
-  <CartContainer/>
+  <Cart/>
 </div>
 </div>
     </div>

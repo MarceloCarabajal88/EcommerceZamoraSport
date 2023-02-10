@@ -32,7 +32,7 @@ let classImgProduct =(isHover)?imgurl2:imgurl;
 
       
         
-       <img className='img-thumbnail' class="card-img-top" src={classImgProduct}   alt="Card image cap"></img>
+       <img className='img-thumbnail card-img-top' src={classImgProduct}   alt="Card image cap"></img>
       
      
 <div className="card-body tituloProduct">

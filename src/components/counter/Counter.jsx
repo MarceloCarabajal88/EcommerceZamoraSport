@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+
 import './Counter.css'
 function Counter({handleAddToCart}) {
 
@@ -19,6 +20,10 @@ function Counter({handleAddToCart}) {
     }
     }
 
+    const handleChange = event => {
+    
+        console.log(event.target.value);
+      };
 
   return (
     <div className='text-center'>
@@ -33,7 +38,7 @@ function Counter({handleAddToCart}) {
 
             <div>
           
-                 <input type="text" value={count}></input>
+                 <input type="text"  onChange={e => setCount(e.target.value)} value={count}></input>
             </div>
 
             <div>

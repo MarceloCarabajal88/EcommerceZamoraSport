@@ -15,22 +15,43 @@ import Modal from 'react-bootstrap/Modal';
 import Button2 from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-const producto=[];
+
 
 
 
 function ItemDetailContainer() {
 
-  //VARIABLES PARA EL MODAL BOOSTRAP
-const [show, setShow] = useState(false);
-
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
 
   const {DesactivarGrid,ActivarGrid} =useContext(componentsContext);//DESACTIVAR GRIDHOME
 
 //DESACTIVO EL GRIDHOME
-DesactivarGrid();
+
+
+  useEffect(()=>{
+
+    getISingletem(itemid).then((respuesta)=>{
+     
+      setProduct(respuesta);
+  
+    }).catch((error)=>alert(`ERRORas:${error}`)).
+    finally(()=>{
+      DesactivarGrid();
+
+  setIsLoading(false);
+    });
+   },[]);
+
+
+
+  //VARIABLES PARA EL MODAL BOOSTRAP
+const [show, setShow] = useState(false);
+const [msgerrorTalle, SetmsgerrorTalle]=useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
+
+
 
 
   const[producto,setProduct]=useState({});
@@ -39,38 +60,44 @@ DesactivarGrid();
 const {addItem} =useContext(cartContext);
 
 
- let {itemid} = useParams();
+ const {itemid} = useParams();
 
 
 function getTalle(talle){
+  if(talle!==undefined){
+    SetmsgerrorTalle(false);
+  }
 producto.tallecompra=talle;
+
 }
 
 
  function handleAddToCart(count){
+
+  if (producto.talles){
+  if (producto.tallecompra===undefined){
+SetmsgerrorTalle(true);
+  }
+  if (producto.tallecompra!==undefined){
+    SetmsgerrorTalle(false);
+    producto.cantidad=count;
+    addItem(producto);
+    handleShow();
+      }
+
+}
+  else{
+    SetmsgerrorTalle(false);
 producto.cantidad=count;
-  addItem(producto,count);
+  addItem(producto);
+
+ // alert('entre a handle to CART con : '+producto.title+'/cantidad'+count+'function '+addItem);
   handleShow();
 //alert (`Agregaste el..${producto.title} al carrito cantidad del prod: ${count}`);
-
+}
 };
 
 
-
-
-
-
- useEffect(()=>{
-
-  getISingletem(itemid).then((respuesta)=>{
-   
-    setProduct(respuesta);
-
-  }).catch((error)=>alert(`ERROR no se xq:${error}`)).
-  finally(()=>{
-setIsLoading(false);
-  });
- },[itemid]);
     
 
 
@@ -86,9 +113,26 @@ return <Loader/>;
       <div>
   <ItemDetail  getTalle={getTalle} producto={producto} />
 <div className='row'>
+
+
   <div className='col-lg-6 col-md-5 col-xs-12 text-center ms-auto'>
+  
+
+   
+          <p className='text-danger'><strong>{msgerrorTalle ? 'Debe Seleccionar un Talle' : ''}
+         
+          </strong></p>
+  
+
 <div className='countcontainer'>
+{producto.stock < 1 &&
+        <h4 className='text-danger'>
+          SIN STOCK!!
+        </h4>
+      }
+      {producto.stock > 0 &&
   <Counter handleAddToCart={handleAddToCart}/>
+      }
   </div>
   </div>
   </div>
@@ -125,11 +169,11 @@ return <Loader/>;
          
 </Modal.Body>
         <Modal.Footer>
-        <Link to='/checkout'>
+        
           <Button2 variant="secondary" onClick={handleClose}>
             CONTINUAR EN EL SITIO
           </Button2>
-          </Link>
+         
           <Link to='/checkout'>
           <Button2 variant="primary" onClick={handleClose}>
             FINALIZAR COMPRA

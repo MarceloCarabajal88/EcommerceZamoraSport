@@ -1,0 +1,46 @@
+.carritobox{
+    text-align: center;
+    max-width: 600px;
+    height: auto;
+}
+
+.tituloheader{
+    background: #999999;
+   color: aliceblue;
+    padding: 14px 19px 15px 19px;
+    border-bottom: none;
+}
+
+.bordered{
+   
+    text-align: center;
+width: 90%;
+   border-bottom: 1px  #999999 solid;
+   margin-bottom: 10px;
+}
+
+.cartformtitle{    font-weight: bold;
+    padding: 15px 0;
+    line-height: 20px;
+    font-size: 16px;
+    color: #222222;
+    text-transform: uppercase;}
+
+
+
+    .divformulario {
+        margin-top: 15px;
+        
+            }
+
+    .divformulario input{
+width: 80%;
+
+    }
+
+    .btn_eliminar{
+        background-color: aliceblue;
+        border: 1px solid rgb(120, 118, 115);
+        padding: 5px 10px;
+        
+    }

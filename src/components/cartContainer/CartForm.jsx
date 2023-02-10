@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
-
+import './Cart.css';
 function InputForm(props){
     return(
-
-<div class="form-group">
+<div className='container'>
+<div class="form-group divformulario">
     <label>{props.label} </label>
     <input 
     type='text' 
@@ -16,16 +16,16 @@ function InputForm(props){
    
 
   </div>
-
+  </div>
     );
 }
 
 export default function CartForm(props) {
 
 const [userData,setUserData]=useState({
-nombre:'',
-email:'',
-tel:'',
+Nombre:'',
+Email:'',
+Tel:'',
 });
 
 console.log('userdata', userData);
@@ -61,12 +61,17 @@ function onSubmit(evt){
 let arrayuserData=Object.keys(userData);
 
   return (
-    <div className='col-lg-6'>
+    <div>
 <form onSubmit={onSubmit}>
-<h2>Ingresa tus Datos para completar la compra</h2>
+  <div className='cartformtitle'>
+<h5>Ingresa tus Datos para completar la compra</h5>
+
+</div>
+
+
  {
     arrayuserData.map(field=>(
-        <InputForm name={field} value={userData[field]} onInputChange={onInputChange} label={field} placeholder={`Ingresa tu ${field} `}/>
+        <InputForm key={field} name={field} value={userData[field]} onInputChange={onInputChange} label={field} placeholder={`Ingresa tu ${field} `}/>
     ))
  }
   <button type="submit" 

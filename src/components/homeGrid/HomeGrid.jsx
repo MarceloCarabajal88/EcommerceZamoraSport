@@ -7,7 +7,6 @@ import { useContext } from 'react';
 function HomeGrid() {
 
   let {GridComponent} =useContext(componentsContext);
-  console.log("el consol en gridhome "+GridComponent);
 if(GridComponent==true){
 
   return (

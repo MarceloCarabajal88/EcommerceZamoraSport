@@ -5,9 +5,19 @@ import { useState } from 'react';
 import { cartContext } from '../../storage/cartContext';
 import { useContext } from 'react';
 import { useEffect } from 'react';
+import { componentsContext } from '../../storage/statesComponents';
 
 function ItemDetail({getTalle,producto}) {
 
+  const {ActivarCanvasCart} =useContext(componentsContext);//Activar CARTCANVAS
+
+
+  const handleLinkClick = event => {
+    console.log('Link clicked');
+ ActivarCanvasCart();
+    // 👇️ refers to the link element
+    //console.log(event.currentTarget);
+  };
   const {getTotalItems}=useContext(cartContext);
   const[totalitems,SetTotalItems]=useState();
 
@@ -75,7 +85,7 @@ getTalle(value);
 
 </div>
 { totalitems>0 &&
-<Link to='/cartContainer'>
+<Link  onClick={handleLinkClick}>
 <button className='btn_goToCart'>ir al carrito</button>
 </Link>
 }

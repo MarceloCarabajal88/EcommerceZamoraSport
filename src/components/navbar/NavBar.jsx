@@ -12,9 +12,10 @@ import Container from 'react-bootstrap/Container';
 
 
 
-
-
 function NavBar() {
+
+ 
+
 
   const {getTotalItems}=useContext(cartContext);
   const[contad,setContad]=useState();
@@ -33,7 +34,7 @@ setContad(getTotalItems());
 
 <div className="navcontenedorLogo">
         <Link to='/'>
-  <img  width="150px" src="/assets/img/logozamora.png" alt="imagen carrito"></img>
+  <img  width="150px" src="/assets/img/logozamora.png" alt="Logo zamora"></img>
   </Link>
 
    </div>

@@ -16,9 +16,17 @@ También puede ver errores en la consola.
 
 ## Librerias o Frameworks utilizados:
 **1) React Bootstrap**
-La cual fue utilizada para la creacion de algunos componenetes, como es el caso de un 
-Slideshow / Carousel. y Navbar
-asi tambien para facilitar el uso de estilos CSS y la creacion de componentes MODAL. (Ventanas emergentes)
+La cual fue utilizada para la creacion de algunos componenetes: 
+
+ tambien para facilitar el uso de estilos CSS y la creacion de componentes MODAL. (Ventanas emergentes)
+
+1) Slideshow / Carousel (Que se activa en el inicio de la web y se desactiva segun el lugar o navegabilidad)
+2) Offcanvas (Ventana emergente del carrito de compras funciona al igual que el carousel)
+3) Navbar para la barra de navegacion
+4) Modals o ventanas emergentes las cuales se activan cuando el usuario compra un artiuclo para ayudarlo con la ruta de compra
+
+tambien se utilizo para facilitar el uso del css con Bootstrap
+
 
 Link:
 https://react-bootstrap.github.io/getting-started/introduction
@@ -34,3 +42,5 @@ https://react-bootstrap.github.io/getting-started/introduction
 5)Permite Borrar articulos del carrito de compras.
 5) Widget de Carrito de compra en la Navbar con la cantidad de items añadidos.
 6)Componentes visuales con link de navegacion como un Grid de fotos, asi como tambien un Carousel.
+7) Renderizado condicional en el carrito de compras, cuando los productos no tienen stock o cuando no se selecciona algun talle de los productos que son por talle.
+8) Validaciones de campo email al realizar la compra.

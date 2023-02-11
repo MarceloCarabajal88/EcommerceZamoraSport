@@ -79,9 +79,11 @@ producto.tallecompra=talle;
 SetmsgerrorTalle(true);
   }
   if (producto.tallecompra!==undefined){
+    console.log('if talle');
     SetmsgerrorTalle(false);
     producto.cantidad=count;
     addItem(producto);
+    console.log(producto);
     handleShow();
       }
 
@@ -89,6 +91,7 @@ SetmsgerrorTalle(true);
   else{
     SetmsgerrorTalle(false);
 producto.cantidad=count;
+console.log('addtalle');
   addItem(producto);
 
  // alert('entre a handle to CART con : '+producto.title+'/cantidad'+count+'function '+addItem);
@@ -169,11 +172,11 @@ return <Loader/>;
          
 </Modal.Body>
         <Modal.Footer>
-        
+        <Link to='/'>
           <Button2 variant="secondary" onClick={handleClose}>
             CONTINUAR EN EL SITIO
           </Button2>
-         
+         </Link>
           <Link to='/checkout'>
           <Button2 variant="primary" onClick={handleClose}>
             FINALIZAR COMPRA

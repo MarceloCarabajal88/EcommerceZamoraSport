@@ -4,7 +4,10 @@ import { useContext } from "react";
 import { componentsContext } from '../../storage/statesComponents';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { useEffect,useState } from 'react';
 import './Cart.css';
+
+
 function Cart() {
 
   const {DesactivarGrid,ActivarGrid,DesactivarCarousel,ActivarCarousel} =useContext(componentsContext);
@@ -12,55 +15,38 @@ function Cart() {
   DesactivarCarousel();
 
   const {cart} =useContext(cartContext);
+  const{removeItem}=useContext(cartContext);
   const {getTotalPrice} =useContext(cartContext);
 
-const{removeItem}=useContext(cartContext);
-
-console.log("este es cartcointainer "+ JSON.stringify(cart));
-
-const preciototal=getTotalPrice();
+  
+  const[precioTotal,setPrecioTotal]=useState();
 
 
-
-   /*
-async function  handlecheckout(userData){
-
-  //1. modelo orden compra
-
-  //recorro el carrito y armo el listado de items con campos q quiero
-const itemscart=cart.map((producto)=>({ 
-  id:producto.id,
-  title:producto.title,
-  price:producto.price,
-  cantidad:producto.cantidad
-
-}))
-
-console.log(itemscart);
-const order={
-buyer:userData,
-items:itemscart,
-date: new Date(),
-total:"1200"
-};
-  //2 enviar a firebase
-  let id = await createBuyOrder(order);
-  let stock = await updateStock(itemscart);
-
-  //hacer console log par ver que trae de stock id
-console.log("esta es la ide del prod "+id);
-  navigate(`/thank-you/${id}`);
- 
-  // recibir respuesta id para confirmar al usuario
-}
-
-*/
-
+  useEffect(()=>{
+    setPrecioTotal(getTotalPrice());
+   
+       },[getTotalPrice]);
     
+        
+  
+       if(cart.length < 1){
   return (
+<div>
+  <p>Aún no has agregado artículos a tu compra.</p>
+</div>
+ ) }
+  else
+  
 
-
+return(
+ 
     <div className='carritobox'>
+       {cart.length < 1 &&
+        <p>
+          Aún no has agregado artículos a tu compra..
+        </p>
+      }
+
 
     <div className='d-flex justify-content-center mt-4'>
        
@@ -69,6 +55,8 @@ console.log("esta es la ide del prod "+id);
            <div className='tituloheader'>
             <h5>DETALLE DEL PEDIDO</h5>
             </div>
+     
+     
             {cart.map((data,index) => (
             <div className='container mt-3 d-flex justify-content-center'>
          <div className='row bordered'>
@@ -96,7 +84,7 @@ console.log("esta es la ide del prod "+id);
 </div>
 </div>
             ))};
-<p><strong>Importe Total  : {preciototal}</strong></p>
+<p><strong>Importe Total  : {precioTotal}</strong></p>
 
         </div>
         </div>

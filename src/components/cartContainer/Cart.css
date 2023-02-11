@@ -44,3 +44,16 @@ width: 80%;
         padding: 5px 10px;
         
     }
+
+   
+      .offcanvas.offcanvas-start {
+        width: 40% !important;
+      }
+
+      /*MEDIA QUERYS PARA VISTA MOBIL*/
+@media (max-width: 600px) {
+
+    .offcanvas.offcanvas-start {
+        width: 100% !important;
+      }
+}  

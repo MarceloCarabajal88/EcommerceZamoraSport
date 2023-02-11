@@ -10,34 +10,77 @@ export function CartContextProvider(props) {
 
    
     function addItem(item) {
-        const isInCar = cart.some(iteminCart => iteminCart.id === item.id);
-        
+
+        console.log("entre en la funcion1 el cart es +" + JSON.stringify(cart) );
+        console.log("entre en la funcion1 el ITEM +" + JSON.stringify(item) );
+        let isInCar = cart.some(iteminCart => iteminCart.id === item.id);
+        let isInCarTalle = cart.some(iteminCart => iteminCart.id === item.id && iteminCart.tallecompra==item.tallecompra && iteminCart.hasOwnProperty('tallecompra')===true );
         let newCart = [];
         if (isInCar) {
-            let index=0;
+            let pos=0;
+
+            console.log('carritoTT' +JSON.stringify(cart));
+            console.log('si esta talle e id' + isInCarTalle);
             cart.forEach(compra => {
-                if (compra.id === item.id && compra.tallecompra === item.tallecompra) {
-                    console.log('Entre al el por que encontre el item y talle el push')
+
+                //CUANDO TIENE EL MISMO TALLE E ID
+                if (isInCarTalle) {
+                    console.log('Entre al el por que encontre el item y talle igual ')
+                    newCart=[...cart];
                     newCart.push({...compra, cantidad: compra.cantidad + item.cantidad}); 
-     
+                    newCart.splice(pos, 1);
+                } 
+                
+                // CUANDO YA ESTA EL ITEM PERO NO TIENE TALLE
+if (compra.id === item.id && compra.hasOwnProperty('tallecompra')===false ) {
+    console.log('Mismo item Id pero no tiene talle la pos es '+pos);
 
+    // Borro el carro
+    newCart=[...cart];
+    
 
-                } else {
-                    console.log('Entre al el para hacer el push CUANDO TALLE DIFERENTE OK')
+    newCart.push({...compra, cantidad: compra.cantidad + item.cantidad}); 
+
+    newCart.splice(pos, 1);
+
+    //newCart.filter((_, index) => index !== pos)
+}
+                
+                
+    if (compra.id === item.id && compra.tallecompra!==item.tallecompra ) {
+    console.log('Entre al el para hacer el push CUANDO TALLE DIFERENTE OK')
                 // newCart.push({...cart,item});
                newCart=[...cart];
                newCart.push(item);
                     console.log('este es el newCart '+ JSON.stringify(newCart))
                 }
 
-                index ++;
+                pos ++;
             });
+
+
+
+
             setCart(newCart);
             console.log('este es el CARTORIGINAL '+ JSON.stringify(cart))
-        } else {
+            console.log('este es el NewCart '+ JSON.stringify(newCart))
+
+        } 
+        
+
+       
+        
+        else {
             console.log('Entre al el para hacer el push SI NO COINCIDE ID')
+        
+            
             setCart([...cart, item]);
+            
+            console.log('este es el else cart casi final '+ JSON.stringify(cart))
         }
+
+        console.log('este es el Final '+ JSON.stringify(cart))
+
     }
 
     function removeItem(posicion) {

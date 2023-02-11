@@ -36,11 +36,11 @@ function App() {
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/detalle/:itemid' element={<ItemDetailContainer/>}/>
       
-        <Route path='/cartContainer' element={<CartContainer/>}/>
+       
         <Route path='/checkout' element={<Chekout/>}/>
         <Route path='/thank-you/:itemid' element={<OrderDetail/>}/>
       </Routes>
-     
+      <CartContainer/>
     <HomeGrid/>
   
       

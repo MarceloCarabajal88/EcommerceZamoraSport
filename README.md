@@ -40,7 +40,7 @@ https://react-bootstrap.github.io/getting-started/introduction
 3) Obtener Detalles de un producto Seleccionado (ItemDetail)
 4) Permite Comprar articulos, generando una orden de compra la cual se aloja en una BD con datos del comprador.
 5)Permite Borrar articulos del carrito de compras.
-5) Widget de Carrito de compra en la Navbar con la cantidad de items añadidos.
-6)Componentes visuales con link de navegacion como un Grid de fotos, asi como tambien un Carousel.
-7) Renderizado condicional en el carrito de compras, cuando los productos no tienen stock o cuando no se selecciona algun talle de los productos que son por talle.
-8) Validaciones de campo email al realizar la compra.
+6) Widget de Carrito de compra en la Navbar con la cantidad de items añadidos.
+7)Componentes visuales con link de navegacion como un Grid de fotos, asi como tambien un Carousel.
+8) Renderizado condicional en el carrito de compras, cuando los productos no tienen stock o cuando no se selecciona algun talle de los productos que son por talle.
+9) Validaciones de campo email al realizar la compra.

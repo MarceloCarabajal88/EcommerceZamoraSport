@@ -1,3 +1,9 @@
+.footerdir{
+  margin-top: 15px;
+    }
+
+
+
 .footerclass{
   width: 100%;
 background-color: #eeeeee;
@@ -34,4 +40,50 @@ margin-left: 30px;
  line-height: 25px;
     font-size: 16px;
     color: #555555;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+
+.footerdir{
+    align-items: center;
+flex-direction: column;
+margin-top: 0px;
+}
+.menufooter{
+    text-align: center;
+}
+
+.columnsfooter span,p{
+    
+    font-weight: 500;
+    font-size: 18px;
+    color:#555555;
+    font-family: "Montserrat",sans-serif;
+    display: block;
+}
+
+
+
+.menufooter ul li{
+    list-style:none;
+ margin-left: 10px;
+
+ line-height: 28px;
+    font-size: 18px;
+    color: #555555;
+}
+
+
+.ulfooter{
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
 }

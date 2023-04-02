@@ -32,7 +32,7 @@ setContad(getTotalItems());
     <div className="navcolor">
 <div className="d-flex justify-content-center col-lg-12">
 
-<div className="navcontenedorLogo">
+<div className="navcontenedorLogo ">
         <Link to='/'>
   <img  width="150px" src="/assets/img/logozamora.png" alt="Logo zamora"></img>
   </Link>

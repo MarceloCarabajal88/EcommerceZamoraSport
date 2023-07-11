@@ -8,11 +8,10 @@ export function CartContextProvider(props) {
     let [cart, setCart] = useState([]);
     let [totalcarrito, setTotalcarrito] = useState(0);
 
-   
+   //Elimine el console log
     function addItem(item) {
 
-        console.log("entre en la funcion1 el cart es +" + JSON.stringify(cart) );
-        console.log("entre en la funcion1 el ITEM +" + JSON.stringify(item) );
+      
         let isInCar = cart.some(iteminCart => iteminCart.id === item.id);
         let isInCarTalle = cart.some(iteminCart => iteminCart.id === item.id && iteminCart.tallecompra==item.tallecompra && iteminCart.hasOwnProperty('tallecompra')===true );
         let newCart = [];
